@@ -50,3 +50,22 @@ document.getElementById('btn-delete').addEventListener('click', function () {
     const joinNumber = splitNumber.join('');
     showNumberField.value = joinNumber;
 })
+
+document.getElementById('btn-submit').addEventListener('click', function () {
+    const showPinField = document.getElementById('show-pin-field');
+    const showPin = showPinField.value;
+
+    const showNumberValue = showNumberField.value;
+
+    const messageSucccess = document.getElementById('message-success');
+    const messageFailure = document.getElementById('message-failure');
+
+    if (showPin == showNumberValue) {
+        messageFailure.style.display = '';
+        messageSucccess.style.display = 'block';
+    }
+    else {
+        messageSucccess.style.display = '';
+        messageFailure.style.display = 'block';
+    }
+})
