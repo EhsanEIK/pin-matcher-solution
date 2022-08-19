@@ -1,4 +1,7 @@
-// pin genetator code
+/* ==============================================================
+                        pin genetator code
+================================================================= */
+
 // this logic is developed by me (Ehsan)
 function pinGenerator() {
     const showPinField = document.getElementById('show-pin-field');
@@ -30,7 +33,10 @@ document.getElementById('btn-generate-pin').addEventListener('click', function (
 } */
 
 
-// pin matcher code
+/* ==============================================================
+                        pin matcher code
+================================================================= */
+
 const showNumberField = document.getElementById('show-number-field');
 
 document.getElementById('numbers-container').addEventListener('click', function (event) {
@@ -39,6 +45,19 @@ document.getElementById('numbers-container').addEventListener('click', function 
         const previousNumber = showNumberField.value;
         showNumberField.value = previousNumber + number;
     }
+    /* else {
+        if (number == 'C') {
+            showNumberField.value = '';
+        }
+        else {
+            const showNumberField = document.getElementById('show-number-field');
+            const previousNumber = showNumberField.value;
+            const splitNumber = previousNumber.split('');
+            splitNumber.pop();
+            const joinNumber = splitNumber.join('');
+            showNumberField.value = joinNumber;
+        }
+    } */
 })
 
 document.getElementById('btn-clear').addEventListener('click', function () {
