@@ -3,8 +3,7 @@ document.getElementById('btn-generate-pin').addEventListener('click', function (
 })
 
 // this logic is developed by me (Ehsan)
-
-/* function pinGenerator() {
+function pinGenerator() {
     const showPinField = document.getElementById('show-pin-field');
     const generatePin = parseInt(Math.random() * 10000);
     if (generatePin > 999) {
@@ -13,9 +12,10 @@ document.getElementById('btn-generate-pin').addEventListener('click', function (
     else {
         pinGenerator();
     }
-} */
+}
 
-function pinGenerator() {
+// this logic is developed by programming hero
+/* function pinGenerator() {
     const showPinField = document.getElementById('show-pin-field');
     const generatePin = parseInt(Math.random() * 10000) + '';
     const splitPin = generatePin.split('');
@@ -26,4 +26,19 @@ function pinGenerator() {
     else {
         pinGenerator();
     }
-}
+} */
+
+
+const showNumberField = document.getElementById('show-number-field');
+
+document.getElementById('numbers-container').addEventListener('click', function (event) {
+    const number = event.target.innerText;
+    if (!isNaN(number)) {
+        const previousNumber = showNumberField.value;
+        showNumberField.value = previousNumber + number;
+    }
+})
+
+document.getElementById('btn-clear').addEventListener('click', function () {
+    showNumberField.value = '';
+})
