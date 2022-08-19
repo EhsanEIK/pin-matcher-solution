@@ -1,11 +1,8 @@
-document.getElementById('btn-generate-pin').addEventListener('click', function () {
-    pinGenerator();
-})
-
+// pin genetator code
 // this logic is developed by me (Ehsan)
 function pinGenerator() {
     const showPinField = document.getElementById('show-pin-field');
-    const generatePin = parseInt(Math.random() * 10000);
+    const generatePin = Math.round(Math.random() * 10000);
     if (generatePin > 999) {
         showPinField.value = generatePin;
     }
@@ -13,6 +10,10 @@ function pinGenerator() {
         pinGenerator();
     }
 }
+
+document.getElementById('btn-generate-pin').addEventListener('click', function () {
+    pinGenerator();
+})
 
 // this logic is developed by programming hero
 /* function pinGenerator() {
@@ -29,6 +30,7 @@ function pinGenerator() {
 } */
 
 
+// pin matcher code
 const showNumberField = document.getElementById('show-number-field');
 
 document.getElementById('numbers-container').addEventListener('click', function (event) {
@@ -61,11 +63,11 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     const messageFailure = document.getElementById('message-failure');
 
     if (showPin == showNumberValue) {
-        messageFailure.style.display = '';
+        messageFailure.style.display = 'none';
         messageSucccess.style.display = 'block';
     }
     else {
-        messageSucccess.style.display = '';
+        messageSucccess.style.display = 'none';
         messageFailure.style.display = 'block';
     }
 })
