@@ -42,3 +42,11 @@ document.getElementById('numbers-container').addEventListener('click', function 
 document.getElementById('btn-clear').addEventListener('click', function () {
     showNumberField.value = '';
 })
+
+document.getElementById('btn-delete').addEventListener('click', function () {
+    const showNumberValue = showNumberField.value;
+    const splitNumber = showNumberValue.split('');
+    splitNumber.pop();
+    const joinNumber = splitNumber.join('');
+    showNumberField.value = joinNumber;
+})
